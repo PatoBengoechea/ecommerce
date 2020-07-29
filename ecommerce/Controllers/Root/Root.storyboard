@@ -49,11 +49,23 @@
                     <view key="view" contentMode="scaleToFill" id="8sJ-RK-ppb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="g9a-QZ-DZH">
+                                <rect key="frame" x="197" y="443" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="g9a-QZ-DZH" firstAttribute="centerY" secondItem="wHh-Iw-3S9" secondAttribute="centerY" id="JqT-Xy-i0G"/>
+                            <constraint firstItem="g9a-QZ-DZH" firstAttribute="centerX" secondItem="wHh-Iw-3S9" secondAttribute="centerX" id="a2o-EU-F4M"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wHh-Iw-3S9"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZsX-WC-Rdq"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="g9a-QZ-DZH" id="QZb-KU-lRe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vHU-DW-Y8p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
