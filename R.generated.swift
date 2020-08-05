@@ -85,6 +85,7 @@ struct R: Rswift.Validatable {
   }
 
   static func validate() throws {
+    try font.validate()
     try intern.validate()
   }
 
@@ -147,6 +148,69 @@ struct R: Rswift.Validatable {
   }
   #endif
 
+  /// This `R.file` struct is generated, and contains static references to 3 files.
+  struct file {
+    /// Resource file `SourceSansPro-Bold.ttf`.
+    static let sourceSansProBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-Bold", pathExtension: "ttf")
+    /// Resource file `SourceSansPro-Light.ttf`.
+    static let sourceSansProLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-Light", pathExtension: "ttf")
+    /// Resource file `SourceSansPro-Regular.ttf`.
+    static let sourceSansProRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-Regular", pathExtension: "ttf")
+
+    /// `bundle.url(forResource: "SourceSansPro-Bold", withExtension: "ttf")`
+    static func sourceSansProBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sourceSansProBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SourceSansPro-Light", withExtension: "ttf")`
+    static func sourceSansProLightTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sourceSansProLightTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "SourceSansPro-Regular", withExtension: "ttf")`
+    static func sourceSansProRegularTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.sourceSansProRegularTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.font` struct is generated, and contains static references to 3 fonts.
+  struct font: Rswift.Validatable {
+    /// Font `SourceSansPro-Bold`.
+    static let sourceSansProBold = Rswift.FontResource(fontName: "SourceSansPro-Bold")
+    /// Font `SourceSansPro-Light`.
+    static let sourceSansProLight = Rswift.FontResource(fontName: "SourceSansPro-Light")
+    /// Font `SourceSansPro-Regular`.
+    static let sourceSansProRegular = Rswift.FontResource(fontName: "SourceSansPro-Regular")
+
+    /// `UIFont(name: "SourceSansPro-Bold", size: ...)`
+    static func sourceSansProBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: sourceSansProBold, size: size)
+    }
+
+    /// `UIFont(name: "SourceSansPro-Light", size: ...)`
+    static func sourceSansProLight(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: sourceSansProLight, size: size)
+    }
+
+    /// `UIFont(name: "SourceSansPro-Regular", size: ...)`
+    static func sourceSansProRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: sourceSansProRegular, size: size)
+    }
+
+    static func validate() throws {
+      if R.font.sourceSansProBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SourceSansPro-Bold' could not be loaded, is 'SourceSansPro-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.sourceSansProLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SourceSansPro-Light' could not be loaded, is 'SourceSansPro-Light.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.sourceSansProRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SourceSansPro-Regular' could not be loaded, is 'SourceSansPro-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.info` struct is generated, and contains static references to 1 properties.
   struct info {
     struct uiApplicationSceneManifest {
@@ -174,6 +238,14 @@ struct R: Rswift.Validatable {
 
       fileprivate init() {}
     }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `ProductTableViewCell`.
+    static let productTableViewCell: Rswift.ReuseIdentifier<ProductTableViewCell> = Rswift.ReuseIdentifier(identifier: "ProductTableViewCell")
 
     fileprivate init() {}
   }

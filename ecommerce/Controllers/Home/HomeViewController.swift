@@ -10,8 +10,11 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    // MARK: - @IBOutlet 
-
+    // MARK: - @IBOutlet
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var productsTableView: UITableView!
+    
+    
     // MARK: - Properties
     var presenter = HomePresenter<HomeViewController>()
     weak var rootDelegate: RootViewControllerDelegate?
