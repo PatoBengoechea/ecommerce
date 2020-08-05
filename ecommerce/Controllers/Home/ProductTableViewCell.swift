@@ -14,9 +14,10 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var prizeLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
 
     // MARK: - Properties
+    static var height: CGFloat = 150
     
     // MARK: - Override Functions
     override func awakeFromNib() {
@@ -32,14 +33,19 @@ class ProductTableViewCell: UITableViewCell {
     }
     
     // MARK: - Functions
+    func setUp(product: ProductViewModel) {
+        productImageView.setImageKF(withURL: product.thumbnail)
+        titleLabel.text = product.title
+        priceLabel.text = product.price
+    }
     
     // MARK: - Private Functions
     private func customize() {
-        titleLabel.set(color: .black, font: .sourceSansProRegular(12))
+        titleLabel.set(color: .black, font: .sourceSansProRegular(16))
         titleLabel.set(numberOfLines: 2, adjustFont: true)
         
-        prizeLabel.set(color: .black, font: .boldSystemFont(ofSize: 14))
-        prizeLabel.set(numberOfLines: 1, adjustFont: true)
+        priceLabel.set(color: .black, font: .sourceSansProBold(18))
+        priceLabel.set(numberOfLines: 1, adjustFont: true)
         
         productImageView.contentMode = .scaleToFill
     }

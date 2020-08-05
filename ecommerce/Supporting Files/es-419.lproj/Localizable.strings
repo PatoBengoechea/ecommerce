@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  ecommerce
+
+  Created by Patricio Bengoechea on 05/08/2020.
+  Copyright © 2020 Patricio Bengoechea. All rights reserved.
+*/
+
+"Search products"="Buscar productos";
+"We couldn't find products in that search" = "No encontramos productos para esa busqueda";

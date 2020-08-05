@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 // MARK: - UI Navigation Controller
 public extension UINavigationController {
@@ -47,5 +48,60 @@ extension UILabel {
     func set(numberOfLines number: Int, adjustFont: Bool) {
         self.numberOfLines = number
         self.adjustsFontSizeToFitWidth = adjustFont
+    }
+}
+
+// MARK: - UI Image View
+extension UIImageView {
+    func setImageKF(withURL string: String?, placerholder: String = "", showActivityIndicator activity: Bool = true, cacheEnabled: Bool = true, succesCallback: (() -> Void)? = nil, failureCallback: (() -> Void)? = nil) {
+        guard let img = string else { return }
+        let url = URL(string: img)
+        if activity {
+            self.kf.indicatorType = .activity
+        }
+        let placeholderImage = UIImage(named: placerholder)
+        var options: KingfisherOptionsInfo = [.transition(.fade(1))]
+        if cacheEnabled {
+            options.append(.cacheOriginalImage)
+        } else {
+            options.append(.forceRefresh)
+        }
+        self.kf.setImage(
+            with: url,
+            placeholder: placeholderImage,
+            options: options) { result in
+                switch result {
+                case .success:
+                    succesCallback?()
+                case .failure:
+                    failureCallback?()
+                }
+        }
+    }
+}
+
+// MARK: - UIView
+extension UIView {
+    func roundCorners(radius: CGFloat, corners: UIRectCorner) {
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
+    }
+}
+
+// MARK: - UI Table View
+extension UITableView {
+    func getNoDataCell(indexPath: IndexPath, text: String) -> UITableViewCell {
+        if let cell = self.dequeueReusableCell(withIdentifier: R.reuseIdentifier.noDataAvailableTableViewCell.identifier, for: indexPath) as? NoDataAvailableTableViewCell {
+            cell.setUp(text)
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    func registerNoDataCell() {
+        let noDataNib = UINib(nibName: R.nib.noDataAvailableTableViewCell.name, bundle: nil)
+        self.register(noDataNib, forCellReuseIdentifier: R.reuseIdentifier.noDataAvailableTableViewCell.identifier)
     }
 }

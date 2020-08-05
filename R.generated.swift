@@ -242,10 +242,81 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    /// Nib `NoDataAvailableTableViewCell`.
+    static let noDataAvailableTableViewCell = _R.nib._NoDataAvailableTableViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "NoDataAvailableTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.noDataAvailableTableViewCell) instead")
+    static func noDataAvailableTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.noDataAvailableTableViewCell)
+    }
+    #endif
+
+    static func noDataAvailableTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NoDataAvailableTableViewCell? {
+      return R.nib.noDataAvailableTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NoDataAvailableTableViewCell
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `NoDataAvailableTableViewCell`.
+    static let noDataAvailableTableViewCell: Rswift.ReuseIdentifier<NoDataAvailableTableViewCell> = Rswift.ReuseIdentifier(identifier: "NoDataAvailableTableViewCell")
     /// Reuse identifier `ProductTableViewCell`.
     static let productTableViewCell: Rswift.ReuseIdentifier<ProductTableViewCell> = Rswift.ReuseIdentifier(identifier: "ProductTableViewCell")
+
+    fileprivate init() {}
+  }
+
+  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
+  struct string {
+    /// This `R.string.localizable` struct is generated, and contains static references to 2 localization keys.
+    struct localizable {
+      /// en translation: Search products
+      ///
+      /// Locales: en, es-419
+      static let searchProducts = Rswift.StringResource(key: "Search products", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: We couldn't find products in that search
+      ///
+      /// Locales: en, es-419
+      static let weCouldnTFindProductsInThatSearch = Rswift.StringResource(key: "We couldn't find products in that search", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+
+      /// en translation: Search products
+      ///
+      /// Locales: en, es-419
+      static func searchProducts(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Search products", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Search products"
+        }
+
+        return NSLocalizedString("Search products", bundle: bundle, comment: "")
+      }
+
+      /// en translation: We couldn't find products in that search
+      ///
+      /// Locales: en, es-419
+      static func weCouldnTFindProductsInThatSearch(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("We couldn't find products in that search", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "We couldn't find products in that search"
+        }
+
+        return NSLocalizedString("We couldn't find products in that search", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
+    }
 
     fileprivate init() {}
   }
@@ -269,6 +340,26 @@ struct _R: Rswift.Validatable {
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib {
+    struct _NoDataAvailableTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = NoDataAvailableTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "NoDataAvailableTableViewCell"
+      let name = "NoDataAvailableTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NoDataAvailableTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NoDataAvailableTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {
