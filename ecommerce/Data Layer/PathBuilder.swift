@@ -19,6 +19,6 @@ class PathBuilder {
     }
     
     func searchProducts(forText text: String) -> String {
-        return "https://api.mercadolibre.com/sites/MLA/search?q=\(text)"
+        return "https://api.mercadolibre.com/sites/MLA/search?q=\(text.addingPercentEncoding(withAllowedCharacters: .afURLQueryAllowed) ?? "")"
     }
 }
