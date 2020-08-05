@@ -67,13 +67,13 @@
                                                             <rect key="frame" x="8" y="15" width="124" height="170"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5d-7V-QvS">
-                                                            <rect key="frame" x="137" y="15" width="272" height="21"/>
+                                                            <rect key="frame" x="142" y="15" width="267" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sh5-MX-OPh">
-                                                            <rect key="frame" x="137" y="46" width="272" height="21"/>
+                                                            <rect key="frame" x="142" y="51" width="267" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -81,13 +81,13 @@
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
-                                                        <constraint firstItem="K5d-7V-QvS" firstAttribute="leading" secondItem="Gy9-CM-gqa" secondAttribute="trailing" constant="5" id="9SC-CP-5WP"/>
+                                                        <constraint firstItem="K5d-7V-QvS" firstAttribute="leading" secondItem="Gy9-CM-gqa" secondAttribute="trailing" constant="10" id="9SC-CP-5WP"/>
                                                         <constraint firstItem="K5d-7V-QvS" firstAttribute="top" secondItem="Gy9-CM-gqa" secondAttribute="top" id="CBr-JW-lpd"/>
                                                         <constraint firstItem="Sh5-MX-OPh" firstAttribute="leading" secondItem="K5d-7V-QvS" secondAttribute="leading" id="Evt-uj-2QH"/>
                                                         <constraint firstAttribute="bottom" secondItem="Gy9-CM-gqa" secondAttribute="bottom" constant="15" id="Y1y-qE-YqP"/>
                                                         <constraint firstAttribute="trailing" secondItem="K5d-7V-QvS" secondAttribute="trailing" constant="5" id="cSC-Wx-f74"/>
                                                         <constraint firstItem="Gy9-CM-gqa" firstAttribute="leading" secondItem="1fU-ld-H5T" secondAttribute="leading" constant="8" id="eIu-7l-xHm"/>
-                                                        <constraint firstItem="Sh5-MX-OPh" firstAttribute="top" secondItem="K5d-7V-QvS" secondAttribute="bottom" constant="10" id="fLe-Yb-i0p"/>
+                                                        <constraint firstItem="Sh5-MX-OPh" firstAttribute="top" secondItem="K5d-7V-QvS" secondAttribute="bottom" constant="15" id="fLe-Yb-i0p"/>
                                                         <constraint firstItem="Gy9-CM-gqa" firstAttribute="width" secondItem="1fU-ld-H5T" secondAttribute="width" multiplier="0.3" id="hGQ-iu-r3q"/>
                                                         <constraint firstItem="Gy9-CM-gqa" firstAttribute="top" secondItem="1fU-ld-H5T" secondAttribute="top" constant="15" id="kW4-wK-idK"/>
                                                         <constraint firstItem="Sh5-MX-OPh" firstAttribute="trailing" secondItem="K5d-7V-QvS" secondAttribute="trailing" id="tch-ip-ZKn"/>
