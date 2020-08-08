@@ -8,23 +8,100 @@
 
 import UIKit
 
-class ProductViewController: UIViewController {
+class ProductViewController: BaseViewController {
+    
+    // MARK: - @IBOutlet
+    @IBOutlet weak var productImageView: UIImageView!
+    @IBOutlet weak var productTableView: UITableView!
 
+    // MARK: - Properties
+    let presenter = ProductPresenter<ProductViewController>()
+    var currentProduct: ProductViewModel?
+    
+    // MARK: - Override Functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+// MARK: - Presenter Delegate
+extension ProductViewController: ProductPresenterDelegate {
+    func startLoading() {
+        
     }
-    */
+    
+    func finishedLoading() {
+        
+    }
+    
+    func onError(message: String) {
+        
+    }
+}
 
+// MARK: - Table View Delegate
+extension ProductViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return presenter.dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        switch presenter.dataSource[section] {
+        case .seller:
+            break
+        case .attributes:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.titleTableViewCell.identifier) as? TitleTableViewCell {
+                cell.setUp(text: R.string.localizable.attributes())
+                return cell
+            }
+        default:
+            break
+        }
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch presenter.dataSource[section] {
+        case .seller:
+            return 50
+            
+        case .attributes:
+            return 50
+        default:
+            break
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch presenter.dataSource[section] {
+        case .seller:
+            return 1
+            
+        case .attributes:
+            return presenter.currentProduct?.attributes.count ?? 0
+        default:
+            break
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch presenter.dataSource[indexPath.section] {
+        case .seller:
+            break
+        case .attributes:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.attributeTableViewCell.identifier, for: indexPath) as? AttributeTableViewCell {
+                cell.setUp(attribute: presenter.currentProduct?.attributes[indexPath.row])
+                return cell
+            }
+        default:
+            break
+        }
+        
+        return UITableViewCell()
+    }
+    
+    
 }

@@ -13,6 +13,8 @@ class Product: Codable {
     let title: String?
     let price: Float?
     let thumbnail: String?
+    let attributes: [Attribute]?
     let seller: Seller?
     let sellerAddres: SellerAddres?
+    
 }

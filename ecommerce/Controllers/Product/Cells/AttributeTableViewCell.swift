@@ -31,9 +31,9 @@ class AttributeTableViewCell: UITableViewCell {
     }
 
     // MARK: - Functions
-    func setUp(title: String, info: String) {
-        titleLabel.text = title
-        infoLabel.text = info
+    func setUp(attribute: AttributeViewModel?) {
+        titleLabel.text = attribute?.name
+        infoLabel.text = attribute?.value
     }
     
     // MARK: - Private Functions

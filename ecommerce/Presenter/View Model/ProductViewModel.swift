@@ -16,7 +16,8 @@ struct ProductViewModel: BaseViewModel {
     let title: String
     let price: String
     let thumbnail: String
-    let seller: SellerViewModel
+    let attributes: [AttributeViewModel]
+    let seller: SellerViewModel?
     let sellerAddres: SellerAddresViewModel?
     
     init(object: Product) {
@@ -24,7 +25,8 @@ struct ProductViewModel: BaseViewModel {
         title = object.title ?? ""
         price = object.price == nil ? "---" : "$\(object.price?.description ?? "-")"
         thumbnail = object.thumbnail ?? ""
-        seller = SellerViewModel(optional: object.seller) ?? SellerViewModel()
+        attributes = AttributeViewModel.array(object.attributes ?? [])
+        seller = SellerViewModel(optional: object.seller) 
         sellerAddres = SellerAddresViewModel(optional: object.sellerAddres)
     }
 }

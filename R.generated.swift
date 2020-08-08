@@ -302,22 +302,30 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 5 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `AttributeTableViewCell`.
+    static let attributeTableViewCell: Rswift.ReuseIdentifier<AttributeTableViewCell> = Rswift.ReuseIdentifier(identifier: "AttributeTableViewCell")
     /// Reuse identifier `LoaderTableViewCell`.
     static let loaderTableViewCell: Rswift.ReuseIdentifier<LoaderTableViewCell> = Rswift.ReuseIdentifier(identifier: "LoaderTableViewCell")
     /// Reuse identifier `NoDataAvailableTableViewCell`.
     static let noDataAvailableTableViewCell: Rswift.ReuseIdentifier<NoDataAvailableTableViewCell> = Rswift.ReuseIdentifier(identifier: "NoDataAvailableTableViewCell")
     /// Reuse identifier `ProductTableViewCell`.
     static let productTableViewCell: Rswift.ReuseIdentifier<ProductTableViewCell> = Rswift.ReuseIdentifier(identifier: "ProductTableViewCell")
+    /// Reuse identifier `TitleTableViewCell`.
+    static let titleTableViewCell: Rswift.ReuseIdentifier<TitleTableViewCell> = Rswift.ReuseIdentifier(identifier: "TitleTableViewCell")
 
     fileprivate init() {}
   }
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 4 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 5 localization keys.
     struct localizable {
+      /// en translation: Attributes
+      ///
+      /// Locales: en, es-419
+      static let attributes = Rswift.StringResource(key: "Attributes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: Please, search the products you want to buy
       ///
       /// Locales: en, es-419
@@ -334,6 +342,21 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es-419
       static let weCouldnTFindProductsInThatSearch = Rswift.StringResource(key: "We couldn't find products in that search", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+
+      /// en translation: Attributes
+      ///
+      /// Locales: en, es-419
+      static func attributes(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Attributes", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Attributes"
+        }
+
+        return NSLocalizedString("Attributes", bundle: bundle, comment: "")
+      }
 
       /// en translation: Please, search the products you want to buy
       ///
