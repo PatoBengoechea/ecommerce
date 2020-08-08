@@ -90,8 +90,25 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 2 view controllers.
   struct segue {
+    /// This struct is generated for `HomeViewController`, and contains static references to 1 segues.
+    struct homeViewController {
+      /// Segue identifier `goToProduct`.
+      static let goToProduct: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, HomeViewController, ProductViewController> = Rswift.StoryboardSegueIdentifier(identifier: "goToProduct")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `goToProduct`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func goToProduct(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, HomeViewController, ProductViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.homeViewController.goToProduct, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     /// This struct is generated for `RootViewController`, and contains static references to 1 segues.
     struct rootViewController {
       /// Segue identifier `goToSplash`.
@@ -114,12 +131,14 @@ struct R: Rswift.Validatable {
   #endif
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
   struct storyboard {
     /// Storyboard `Home`.
     static let home = _R.storyboard.home()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `Product`.
+    static let product = _R.storyboard.product()
     /// Storyboard `Root`.
     static let root = _R.storyboard.root()
 
@@ -134,6 +153,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Product", bundle: ...)`
+    static func product(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.product)
     }
     #endif
 
@@ -439,6 +465,9 @@ struct _R: Rswift.Validatable {
       try launchScreen.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try product.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try root.validate()
       #endif
     }
@@ -465,6 +494,22 @@ struct _R: Rswift.Validatable {
 
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct product: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = ProductViewController
+
+      let bundle = R.hostingBundle
+      let name = "Product"
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {

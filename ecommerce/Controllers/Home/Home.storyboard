@@ -137,11 +137,22 @@
                         <outlet property="searchBar" destination="eNr-1o-8Zn" id="qHX-GC-gM3"/>
                         <outlet property="tableViewBottomConstraint" destination="f8H-hl-5Pa" id="vRn-s2-c6r"/>
                         <outlet property="topView" destination="DlB-z4-k0D" id="KaR-Zj-uxH"/>
+                        <segue destination="r6O-b5-5vq" kind="show" identifier="goToProduct" id="wg3-hF-ppx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nwg-Xg-RN3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-113" y="129"/>
+        </scene>
+        <!--Product-->
+        <scene sceneID="MZN-bq-JNf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Product" id="r6O-b5-5vq" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="sTv-sV-cuG"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="csM-2H-g6g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="608" y="129"/>
         </scene>
     </scenes>
 </document>
