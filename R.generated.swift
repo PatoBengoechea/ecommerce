@@ -242,10 +242,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
+    /// Nib `LoaderTableViewCell`.
+    static let loaderTableViewCell = _R.nib._LoaderTableViewCell()
     /// Nib `NoDataAvailableTableViewCell`.
     static let noDataAvailableTableViewCell = _R.nib._NoDataAvailableTableViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "LoaderTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.loaderTableViewCell) instead")
+    static func loaderTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.loaderTableViewCell)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "NoDataAvailableTableViewCell", in: bundle)`
@@ -255,6 +265,10 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    static func loaderTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LoaderTableViewCell? {
+      return R.nib.loaderTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LoaderTableViewCell
+    }
+
     static func noDataAvailableTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NoDataAvailableTableViewCell? {
       return R.nib.noDataAvailableTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NoDataAvailableTableViewCell
     }
@@ -262,8 +276,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `LoaderTableViewCell`.
+    static let loaderTableViewCell: Rswift.ReuseIdentifier<LoaderTableViewCell> = Rswift.ReuseIdentifier(identifier: "LoaderTableViewCell")
     /// Reuse identifier `NoDataAvailableTableViewCell`.
     static let noDataAvailableTableViewCell: Rswift.ReuseIdentifier<NoDataAvailableTableViewCell> = Rswift.ReuseIdentifier(identifier: "NoDataAvailableTableViewCell")
     /// Reuse identifier `ProductTableViewCell`.
@@ -274,16 +290,39 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 2 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 4 localization keys.
     struct localizable {
+      /// en translation: Please, search the products you want to buy
+      ///
+      /// Locales: en, es-419
+      static let pleaseSearchTheProductsYouWantToBuy = Rswift.StringResource(key: "Please, search the products you want to buy", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: Search products
       ///
       /// Locales: en, es-419
       static let searchProducts = Rswift.StringResource(key: "Search products", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: There was an unexpected error, please try again
+      ///
+      /// Locales: en, es-419
+      static let thereWasAnErrorPleaseTryAgain = Rswift.StringResource(key: "There was an error, please try again", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: We couldn't find products in that search
       ///
       /// Locales: en, es-419
       static let weCouldnTFindProductsInThatSearch = Rswift.StringResource(key: "We couldn't find products in that search", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+
+      /// en translation: Please, search the products you want to buy
+      ///
+      /// Locales: en, es-419
+      static func pleaseSearchTheProductsYouWantToBuy(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Please, search the products you want to buy", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Please, search the products you want to buy"
+        }
+
+        return NSLocalizedString("Please, search the products you want to buy", bundle: bundle, comment: "")
+      }
 
       /// en translation: Search products
       ///
@@ -298,6 +337,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Search products", bundle: bundle, comment: "")
+      }
+
+      /// en translation: There was an unexpected error, please try again
+      ///
+      /// Locales: en, es-419
+      static func thereWasAnErrorPleaseTryAgain(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("There was an error, please try again", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "There was an error, please try again"
+        }
+
+        return NSLocalizedString("There was an error, please try again", bundle: bundle, comment: "")
       }
 
       /// en translation: We couldn't find products in that search
@@ -343,6 +397,20 @@ struct _R: Rswift.Validatable {
 
   #if os(iOS) || os(tvOS)
   struct nib {
+    struct _LoaderTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = LoaderTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "LoaderTableViewCell"
+      let name = "LoaderTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LoaderTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LoaderTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _NoDataAvailableTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
       typealias ReusableType = NoDataAvailableTableViewCell
 

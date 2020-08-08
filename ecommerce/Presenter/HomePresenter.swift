@@ -21,8 +21,9 @@ class HomePresenter<T: HomePresenterDelegate>: BasePresenter<T> {
     // MARK: - Properties
     var dataSections: [HomeSections] = [.products]
     var dataProducts: [ProductViewModel] = []
-    var searchProductsStatus: ServiceStatus = .loading
+    var searchProductsStatus: ServiceStatus = .notExecuted
     var textToSearch: String = ""
+    var messageError: String = ""
     
     // MARK: - Functions
     func searchProducts() {
@@ -55,6 +56,7 @@ extension HomePresenter: ProductManagerDelegate {
         case .getSearchProducts:
             searchProductsStatus = .error
         }
+        messageError = message
         delegate?.onError(message: message)
     }
     

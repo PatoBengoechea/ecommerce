@@ -88,6 +88,11 @@ extension UIView {
         mask.path = path.cgPath
         layer.mask = mask
     }
+    
+    func roundCorners(radius: CGFloat) {
+        self.layer.cornerRadius = radius
+        self.clipsToBounds = true
+    }
 }
 
 // MARK: - UI Table View
@@ -100,8 +105,11 @@ extension UITableView {
         return UITableViewCell()
     }
     
-    func registerNoDataCell() {
+    func registerNoDataCellAndLoader() {
         let noDataNib = UINib(nibName: R.nib.noDataAvailableTableViewCell.name, bundle: nil)
         self.register(noDataNib, forCellReuseIdentifier: R.reuseIdentifier.noDataAvailableTableViewCell.identifier)
+        
+        let loadercell = UINib(nibName: R.nib.loaderTableViewCell.name, bundle: nil)
+        self.register(loadercell, forCellReuseIdentifier: R.reuseIdentifier.loaderTableViewCell.identifier)
     }
 }

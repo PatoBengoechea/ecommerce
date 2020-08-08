@@ -16,4 +16,5 @@ enum ServiceStatus {
     case loading
     case successful
     case error
+    case notExecuted
 }

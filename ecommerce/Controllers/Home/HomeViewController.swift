@@ -27,14 +27,19 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
         presenter.attachView(self)
-        productsTableView.registerNoDataCell()
+        productsTableView.registerNoDataCellAndLoader()
 
         customize()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         topView.roundCorners(radius: 7, corners: [.bottomLeft, .bottomRight])
+        productsTableView.roundCorners(radius: 10)
     }
     
     override func keyboardWillShow(_ keyboardHeight: CGFloat) {
@@ -51,6 +56,8 @@ class HomeViewController: BaseViewController {
     
     // MARK: - Private Functions
     private func customize() {
+        view.backgroundColor = .systemYellow
+        
         topView.backgroundColor = .systemYellow
         
         searchBar.backgroundImage = UIImage()
@@ -70,6 +77,17 @@ extension HomeViewController: HomePresenterDelegate {
         productsTableView.reloadData()
     }
     
+    func startLoading() {
+        productsTableView.reloadData()
+    }
+    
+    func finishedLoading() {
+        
+    }
+    
+    func onError(message: String) {
+        productsTableView.reloadData()
+    }
     
 }
 
@@ -82,10 +100,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch presenter.dataSections[section] {
         case .products:
-            if presenter.dataProducts.isEmpty {
+            switch presenter.searchProductsStatus {
+            case .loading, .error, .notExecuted:
                 return 1
-            } else {
-                return presenter.dataProducts.count
+                
+            case .successful:
+                if presenter.dataProducts.isEmpty {
+                    return 1
+                } else {
+                    return presenter.dataProducts.count
+                }
             }
         }
     }
@@ -93,12 +117,29 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch presenter.dataSections[indexPath.section] {
         case .products:
-            if presenter.dataProducts.isEmpty {
-                return tableView.getNoDataCell(indexPath: indexPath, text: R.string.localizable.weCouldnTFindProductsInThatSearch())
-            }
-            if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.productTableViewCell.identifier, for: indexPath) as? ProductTableViewCell {
-                cell.setUp(product: presenter.dataProducts[indexPath.row])
-                return cell
+            switch presenter.searchProductsStatus {
+            case .loading:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.loaderTableViewCell.identifier, for: indexPath) as? LoaderTableViewCell {
+                    return cell
+                }
+                
+            case .notExecuted, .error:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.noDataAvailableTableViewCell.identifier, for: indexPath) as? NoDataAvailableTableViewCell {
+                    if presenter.searchProductsStatus == .notExecuted {
+                        cell.setUp(R.string.localizable.pleaseSearchTheProductsYouWantToBuy())
+                    } else {
+                        cell.setUp(presenter.messageError)
+                    }
+                    return cell
+                }
+                
+            case .successful:
+                if presenter.dataProducts.isEmpty {
+                    return tableView.getNoDataCell(indexPath: indexPath, text: R.string.localizable.weCouldnTFindProductsInThatSearch())
+                } else if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.productTableViewCell.identifier, for: indexPath) as? ProductTableViewCell {
+                    cell.setUp(product: presenter.dataProducts[indexPath.row])
+                    return cell
+                }
             }
         }
         return UITableViewCell()
@@ -111,10 +152,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch presenter.dataSections[indexPath.section] {
         case .products:
-            if presenter.dataProducts.isEmpty {
+            switch presenter.searchProductsStatus {
+            case .loading, .error, .notExecuted:
                 return tableView.frame.height
-            } else {
-                return ProductTableViewCell.height
+            
+            case .successful:
+                if presenter.dataProducts.isEmpty {
+                    return tableView.frame.height
+                } else {
+                    return ProductTableViewCell.height
+                }
             }
         }
     }
