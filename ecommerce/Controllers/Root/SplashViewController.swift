@@ -11,7 +11,9 @@ import UIKit
 class SplashViewController: UIViewController {
     
     // MARK: - @IBOutlet
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var controllerView: UIView!
+    @IBOutlet weak var shopImageView: UIImageView!
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     
     // MARK: - Properties
     weak var rootDelegate: RootViewControllerDelegate?
@@ -28,12 +30,16 @@ class SplashViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
             self.rootDelegate?.goToHome()
         }
+        
     }
     
     // MARK: - Private Functions
     private func customize() {
-        activityIndicator.color = .systemBlue
-        activityIndicator.startAnimating()
+        controllerView.backgroundColor = UIColor.systemYellow.withAlphaComponent(1)
+        
+        shopImageView.image = R.image.shop()
+        
+        loader.startAnimating()
     }
 
 }

@@ -13,6 +13,7 @@ class ProductTableViewCell: UITableViewCell {
     // MARK: - @IBOutlet
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var productImageView: UIImageView!
+    @IBOutlet weak var creditCardImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
 
@@ -37,6 +38,11 @@ class ProductTableViewCell: UITableViewCell {
         productImageView.setImageKF(withURL: product.thumbnail)
         titleLabel.text = product.title
         priceLabel.text = product.price
+        if product.acceptMercadoPago {
+            creditCardImageView.isHidden = false
+        } else {
+            creditCardImageView.isHidden = true
+        }
     }
     
     // MARK: - Private Functions
@@ -48,6 +54,10 @@ class ProductTableViewCell: UITableViewCell {
         priceLabel.set(numberOfLines: 1, adjustFont: true)
         
         productImageView.contentMode = .scaleToFill
+        
+        creditCardImageView.contentMode = .scaleToFill
+        creditCardImageView.image = R.image.debitCard()
+        
     }
 
 }

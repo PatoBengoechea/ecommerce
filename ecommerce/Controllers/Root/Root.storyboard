@@ -50,21 +50,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="g9a-QZ-DZH">
-                                <rect key="frame" x="197" y="443" width="20" height="20"/>
+                            <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mSM-5w-Cee">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shop" translatesAutoresizingMaskIntoConstraints="NO" id="chi-Na-Urh">
+                                <rect key="frame" x="175" y="375.5" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="chi-Na-Urh" secondAttribute="height" multiplier="1:1" id="sDd-Oo-PxA"/>
+                                    <constraint firstAttribute="height" constant="64" id="wma-XM-g4Y"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="35t-xg-cTb">
+                                <rect key="frame" x="197" y="479.5" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="g9a-QZ-DZH" firstAttribute="centerY" secondItem="wHh-Iw-3S9" secondAttribute="centerY" id="JqT-Xy-i0G"/>
-                            <constraint firstItem="g9a-QZ-DZH" firstAttribute="centerX" secondItem="wHh-Iw-3S9" secondAttribute="centerX" id="a2o-EU-F4M"/>
+                            <constraint firstItem="chi-Na-Urh" firstAttribute="centerY" secondItem="wHh-Iw-3S9" secondAttribute="centerY" multiplier="0.9" id="2kS-Mf-4Up"/>
+                            <constraint firstItem="35t-xg-cTb" firstAttribute="centerX" secondItem="wHh-Iw-3S9" secondAttribute="centerX" id="DXE-nG-uAu"/>
+                            <constraint firstItem="mSM-5w-Cee" firstAttribute="leading" secondItem="wHh-Iw-3S9" secondAttribute="leading" id="Qto-jK-6Lp"/>
+                            <constraint firstAttribute="bottom" secondItem="mSM-5w-Cee" secondAttribute="bottom" id="ZaM-zd-MJP"/>
+                            <constraint firstItem="chi-Na-Urh" firstAttribute="centerX" secondItem="wHh-Iw-3S9" secondAttribute="centerX" id="ayC-eZ-q9C"/>
+                            <constraint firstItem="mSM-5w-Cee" firstAttribute="top" secondItem="8sJ-RK-ppb" secondAttribute="top" id="c4c-TJ-SHy"/>
+                            <constraint firstItem="35t-xg-cTb" firstAttribute="top" secondItem="chi-Na-Urh" secondAttribute="bottom" constant="40" id="ft8-Qf-9S1"/>
+                            <constraint firstItem="wHh-Iw-3S9" firstAttribute="trailing" secondItem="mSM-5w-Cee" secondAttribute="trailing" id="zTE-AF-SGg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wHh-Iw-3S9"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZsX-WC-Rdq"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="g9a-QZ-DZH" id="QZb-KU-lRe"/>
+                        <outlet property="controllerView" destination="mSM-5w-Cee" id="HWw-wk-Ewi"/>
+                        <outlet property="loader" destination="35t-xg-cTb" id="Uw0-j7-qbc"/>
+                        <outlet property="shopImageView" destination="chi-Na-Urh" id="O5t-dG-HRM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vHU-DW-Y8p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -72,4 +91,7 @@
             <point key="canvasLocation" x="1751" y="784"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="shop" width="21" height="21"/>
+    </resources>
 </document>

@@ -16,6 +16,7 @@ struct ProductViewModel: BaseViewModel {
     let title: String
     let price: String
     let thumbnail: String
+    let acceptMercadoPago: Bool
     let attributes: [AttributeViewModel]
     let seller: SellerViewModel?
     let sellerAddres: SellerAddresViewModel?
@@ -28,5 +29,6 @@ struct ProductViewModel: BaseViewModel {
         attributes = AttributeViewModel.array(object.attributes ?? [])
         seller = SellerViewModel(optional: object.seller) 
         sellerAddres = SellerAddresViewModel(optional: object.sellerAddres)
+        acceptMercadoPago = object.accepts_mercadopago ?? false
     }
 }
