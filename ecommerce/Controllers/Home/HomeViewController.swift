@@ -25,7 +25,6 @@ class HomeViewController: BaseViewController {
     // MARK: - Override Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(true, animated: false)
         presenter.attachView(self)
         productsTableView.registerNoDataCellAndLoader()
 
@@ -34,6 +33,8 @@ class HomeViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        presenter.initialProducts()
     }
     
     override func viewDidLayoutSubviews() {
@@ -52,6 +53,12 @@ class HomeViewController: BaseViewController {
         self.view.layoutIfNeeded()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let productVC = segue.destination as? ProductViewController, let product = sender as? ProductViewModel {
+            productVC.currentProduct = product
+        }
+    }
+    
     // MARK: - Functions
     
     // MARK: - Private Functions
@@ -66,7 +73,7 @@ class HomeViewController: BaseViewController {
         field?.borderStyle = .roundedRect
         field?.layer.borderColor = UIColor.lightGray.cgColor
         field?.placeholder = R.string.localizable.searchProducts()
-        field?.font = .sourceSansProRegular(14)
+        field?.font = .ralewayMedium(14)
     }
     
 }
@@ -146,7 +153,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // GO TO PRODUCT DETAILS
+        let product = presenter.dataProducts[indexPath.row]
+        performSegue(withIdentifier: R.segue.homeViewController.goToProduct.identifier, sender: product)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -194,7 +202,7 @@ extension HomeViewController: UISearchBarDelegate {
         searchBar.showsCancelButton = true
         let button = searchBar.value(forKey: kcancelbButton) as? UIButton
         button?.tintColor = .black
-        button?.titleLabel?.font = .sourceSansProRegular(16)
+        button?.titleLabel?.font = .ralewayMedium(16)
     }
     
 }

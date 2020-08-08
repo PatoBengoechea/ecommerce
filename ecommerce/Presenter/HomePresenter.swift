@@ -29,6 +29,11 @@ class HomePresenter<T: HomePresenterDelegate>: BasePresenter<T> {
     func searchProducts() {
         ProductManager.sharedInstance.getSearchProducts(delegate: self, forText: textToSearch)
     }
+    
+    func initialProducts() {
+        let array = ["auriculares", "electrodomesticos", "computadora", "autos", "remeras"]
+        ProductManager.sharedInstance.getSearchProducts(delegate: self, forText: array.randomElement() ?? "monitor")
+    }
 }
 
 // MARK: - Product Manager Delegate

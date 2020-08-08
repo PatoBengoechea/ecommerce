@@ -22,7 +22,7 @@ class ProductPresenter<T: ProductPresenterDelegate>: BasePresenter<T> {
     
     // MARK: Properties
     var dataSource: [DataSource] = []
-    var currentProduct: ProductViewModel?
+    var currentProduct: ProductViewModel? { didSet { initDataSource()}}
     
     // MARK: - Functions
     func set(currentProduct: ProductViewModel?) {
@@ -30,7 +30,7 @@ class ProductPresenter<T: ProductPresenterDelegate>: BasePresenter<T> {
     }
     
     func initDataSource() {
-        if currentProduct?.seller != nil { dataSource.append(.seller)}
+//        if currentProduct?.seller != nil { dataSource.append(.seller)}
         if !(currentProduct?.attributes.isEmpty ?? false) { dataSource.append(.attributes)}
     }
     

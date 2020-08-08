@@ -41,10 +41,10 @@ class ProductTableViewCell: UITableViewCell {
     
     // MARK: - Private Functions
     private func customize() {
-        titleLabel.set(color: .black, font: .sourceSansProRegular(16))
+        titleLabel.set(color: .black, font: .ralewayMedium(16))
         titleLabel.set(numberOfLines: 2, adjustFont: true)
         
-        priceLabel.set(color: .black, font: .sourceSansProBold(18))
+        priceLabel.set(color: .black, font: .ralewayBold(18))
         priceLabel.set(numberOfLines: 1, adjustFont: true)
         
         productImageView.contentMode = .scaleToFill

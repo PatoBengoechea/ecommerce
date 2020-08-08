@@ -21,8 +21,27 @@ class ProductViewController: BaseViewController {
     // MARK: - Override Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        customize()
+        presenter.currentProduct = currentProduct
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        productTableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        productImageView.setImageKF(withURL: presenter.currentProduct?.thumbnail)
+    }
+    
+    // MARK: - Private Functions
+    private func customize() {
+        navigationController?.navigationBar.barTintColor = .systemYellow
+        navigationController?.navigationBar.tintColor = .black
+        
+        productTableView.separatorStyle = .none
     }
 
 }
@@ -93,7 +112,11 @@ extension ProductViewController: UITableViewDelegate, UITableViewDataSource {
             break
         case .attributes:
             if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.attributeTableViewCell.identifier, for: indexPath) as? AttributeTableViewCell {
-                cell.setUp(attribute: presenter.currentProduct?.attributes[indexPath.row])
+                let even = indexPath.row % 2 == 0
+                cell.setUp(attribute: presenter.currentProduct?.attributes[indexPath.row],
+                           alpha: even,
+                           first: indexPath.row == 0,
+                           last: indexPath.row == ((presenter.currentProduct?.attributes.count ?? 1) - 1))
                 return cell
             }
         default:
@@ -101,6 +124,15 @@ extension ProductViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch presenter.dataSource[indexPath.section] {
+        case .attributes:
+            return UITableView.automaticDimension
+        default:
+            return 0
+        }
     }
     
     

@@ -9,6 +9,6 @@
 import Foundation
 
 class Attribute: NSObject,Codable {
-    let name: String
-    let value_name: String
+    let name: String?
+    let value_name: String?
 }

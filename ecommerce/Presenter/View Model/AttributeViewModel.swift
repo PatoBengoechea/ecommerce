@@ -15,7 +15,7 @@ struct AttributeViewModel: BaseViewModel {
     let value: String
     
     init(object: T) {
-        name = object.name
-        value = object.value_name
+        name = object.name ?? ""
+        value = object.value_name ?? ""
     }
 }

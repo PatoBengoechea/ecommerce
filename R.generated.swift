@@ -176,28 +176,28 @@ struct R: Rswift.Validatable {
 
   /// This `R.file` struct is generated, and contains static references to 3 files.
   struct file {
-    /// Resource file `SourceSansPro-Bold.ttf`.
-    static let sourceSansProBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-Bold", pathExtension: "ttf")
-    /// Resource file `SourceSansPro-Light.ttf`.
-    static let sourceSansProLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-Light", pathExtension: "ttf")
-    /// Resource file `SourceSansPro-Regular.ttf`.
-    static let sourceSansProRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SourceSansPro-Regular", pathExtension: "ttf")
+    /// Resource file `Raleway-Medium.ttf`.
+    static let ralewayMediumTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Raleway-Medium", pathExtension: "ttf")
+    /// Resource file `Raleway-Regular.ttf`.
+    static let ralewayRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Raleway-Regular", pathExtension: "ttf")
+    /// Resource file `Raleway-Thin.ttf`.
+    static let ralewayThinTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Raleway-Thin", pathExtension: "ttf")
 
-    /// `bundle.url(forResource: "SourceSansPro-Bold", withExtension: "ttf")`
-    static func sourceSansProBoldTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sourceSansProBoldTtf
+    /// `bundle.url(forResource: "Raleway-Medium", withExtension: "ttf")`
+    static func ralewayMediumTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.ralewayMediumTtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "SourceSansPro-Light", withExtension: "ttf")`
-    static func sourceSansProLightTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sourceSansProLightTtf
+    /// `bundle.url(forResource: "Raleway-Regular", withExtension: "ttf")`
+    static func ralewayRegularTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.ralewayRegularTtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "SourceSansPro-Regular", withExtension: "ttf")`
-    static func sourceSansProRegularTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.sourceSansProRegularTtf
+    /// `bundle.url(forResource: "Raleway-Thin", withExtension: "ttf")`
+    static func ralewayThinTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.ralewayThinTtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -206,32 +206,32 @@ struct R: Rswift.Validatable {
 
   /// This `R.font` struct is generated, and contains static references to 3 fonts.
   struct font: Rswift.Validatable {
-    /// Font `SourceSansPro-Bold`.
-    static let sourceSansProBold = Rswift.FontResource(fontName: "SourceSansPro-Bold")
-    /// Font `SourceSansPro-Light`.
-    static let sourceSansProLight = Rswift.FontResource(fontName: "SourceSansPro-Light")
-    /// Font `SourceSansPro-Regular`.
-    static let sourceSansProRegular = Rswift.FontResource(fontName: "SourceSansPro-Regular")
+    /// Font `Raleway-Medium`.
+    static let ralewayMedium = Rswift.FontResource(fontName: "Raleway-Medium")
+    /// Font `Raleway-Regular`.
+    static let ralewayRegular = Rswift.FontResource(fontName: "Raleway-Regular")
+    /// Font `Raleway-Thin`.
+    static let ralewayThin = Rswift.FontResource(fontName: "Raleway-Thin")
 
-    /// `UIFont(name: "SourceSansPro-Bold", size: ...)`
-    static func sourceSansProBold(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sourceSansProBold, size: size)
+    /// `UIFont(name: "Raleway-Medium", size: ...)`
+    static func ralewayMedium(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: ralewayMedium, size: size)
     }
 
-    /// `UIFont(name: "SourceSansPro-Light", size: ...)`
-    static func sourceSansProLight(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sourceSansProLight, size: size)
+    /// `UIFont(name: "Raleway-Regular", size: ...)`
+    static func ralewayRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: ralewayRegular, size: size)
     }
 
-    /// `UIFont(name: "SourceSansPro-Regular", size: ...)`
-    static func sourceSansProRegular(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: sourceSansProRegular, size: size)
+    /// `UIFont(name: "Raleway-Thin", size: ...)`
+    static func ralewayThin(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: ralewayThin, size: size)
     }
 
     static func validate() throws {
-      if R.font.sourceSansProBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SourceSansPro-Bold' could not be loaded, is 'SourceSansPro-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sourceSansProLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SourceSansPro-Light' could not be loaded, is 'SourceSansPro-Light.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.sourceSansProRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SourceSansPro-Regular' could not be loaded, is 'SourceSansPro-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.ralewayMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Raleway-Medium' could not be loaded, is 'Raleway-Medium.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.ralewayRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Raleway-Regular' could not be loaded, is 'Raleway-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.ralewayThin(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Raleway-Thin' could not be loaded, is 'Raleway-Thin.ttf' added to the UIAppFonts array in this targets Info.plist?") }
     }
 
     fileprivate init() {}
