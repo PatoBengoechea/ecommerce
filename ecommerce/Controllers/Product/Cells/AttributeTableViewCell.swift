@@ -34,6 +34,12 @@ class AttributeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        roundViews()
+    }
+    
     // MARK: - Functions
     func setUp(attribute: AttributeViewModel?, alpha: Bool, first: Bool, last: Bool) {
         titleLabel.text = attribute?.name
@@ -45,16 +51,10 @@ class AttributeTableViewCell: UITableViewCell {
             titleView.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
             infoView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
         }
-        DispatchQueue.main.async {
-            if first {
-                self.titleView.roundCorners(radius: 5, corners: [.topLeft])
-                self.infoView.roundCorners(radius: 5, corners: [.topRight])
-            }
-            if last {
-                self.titleView.roundCorners(radius: 5, corners: [.bottomLeft])
-                self.infoView.roundCorners(radius: 5, corners: [.bottomRight])
-            }
-        }
+        self.isFirst = first
+        self.isLast = last
+        
+        roundViews()
     }
     
     // MARK: - Private Functions
@@ -70,6 +70,19 @@ class AttributeTableViewCell: UITableViewCell {
         
         infoView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.75)
         infoView.clipsToBounds = true
+    }
+    
+    private func roundViews() {
+        DispatchQueue.main.async {
+            if self.isFirst {
+                self.titleView.roundCorners(radius: 5, corners: [.topLeft])
+                self.infoView.roundCorners(radius: 5, corners: [.topRight])
+            }
+            if self.isLast {
+                self.titleView.roundCorners(radius: 5, corners: [.bottomLeft])
+                self.infoView.roundCorners(radius: 5, corners: [.bottomRight])
+            }
+        }
     }
     
 }
