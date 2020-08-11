@@ -39,11 +39,11 @@ class PriceTableViewCell: UITableViewCell {
     
     // MARK: - Private Functions
     private func customize() {
-        titleLabel.set(color: .black, font: .ralewayBold(22))
+        titleLabel.set(color: .black, font: .latoBold(22))
         titleLabel.set(numberOfLines: 1, adjustFont: true)
         titleLabel.text = R.string.localizable.price()
         
-        valueLabel.set(color: .black, font: .ralewayBold(22))
+        valueLabel.set(color: .black, font: .latoBold(22))
         valueLabel.set(numberOfLines: 1, adjustFont: true)
     }
 

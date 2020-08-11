@@ -72,7 +72,7 @@ class HomeViewController: BaseViewController {
         field?.borderStyle = .roundedRect
         field?.layer.borderColor = UIColor.lightGray.cgColor
         field?.placeholder = R.string.localizable.searchProducts()
-        field?.font = .ralewayMedium(14)
+        field?.font = .latoRegular(14)
     }
     
 }
@@ -208,7 +208,7 @@ extension HomeViewController: UISearchBarDelegate {
         searchBar.showsCancelButton = true
         let button = searchBar.value(forKey: kcancelbButton) as? UIButton
         button?.tintColor = .black
-        button?.titleLabel?.font = .ralewayMedium(16)
+        button?.titleLabel?.font = .latoRegular(16)
     }
     
 }

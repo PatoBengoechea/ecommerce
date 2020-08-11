@@ -59,10 +59,10 @@ class AttributeTableViewCell: UITableViewCell {
     
     // MARK: - Private Functions
     private func customize() {
-        titleLabel.set(color: .black, font: .ralewayBold(12))
+        titleLabel.set(color: .black, font: .latoBold(12))
         titleLabel.set(numberOfLines: 2, adjustFont: true)
         
-        infoLabel.set(color: .black, font: .ralewayMedium(12))
+        infoLabel.set(color: .black, font: .latoRegular(12))
         titleLabel.set(numberOfLines: 2, adjustFont: true)
         
         titleView.backgroundColor = UIColor.gray.withAlphaComponent(0.75)

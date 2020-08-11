@@ -9,9 +9,9 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Raleway-Medium.ttf</string>
-		<string>Raleway-Regularttf</string>
-		<string>Raleway-Thinttf</string>
+		<string>Lato-Bold.ttf</string>
+		<string>Lato-Light.ttf</string>
+		<string>Lato-Regular.ttf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

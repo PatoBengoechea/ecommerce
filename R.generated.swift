@@ -176,28 +176,28 @@ struct R: Rswift.Validatable {
 
   /// This `R.file` struct is generated, and contains static references to 3 files.
   struct file {
-    /// Resource file `Raleway-Medium.ttf`.
-    static let ralewayMediumTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Raleway-Medium", pathExtension: "ttf")
-    /// Resource file `Raleway-Regular.ttf`.
-    static let ralewayRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Raleway-Regular", pathExtension: "ttf")
-    /// Resource file `Raleway-Thin.ttf`.
-    static let ralewayThinTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Raleway-Thin", pathExtension: "ttf")
+    /// Resource file `Lato-Bold.ttf`.
+    static let latoBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Lato-Bold", pathExtension: "ttf")
+    /// Resource file `Lato-Light.ttf`.
+    static let latoLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Lato-Light", pathExtension: "ttf")
+    /// Resource file `Lato-Regular.ttf`.
+    static let latoRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Lato-Regular", pathExtension: "ttf")
 
-    /// `bundle.url(forResource: "Raleway-Medium", withExtension: "ttf")`
-    static func ralewayMediumTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.ralewayMediumTtf
+    /// `bundle.url(forResource: "Lato-Bold", withExtension: "ttf")`
+    static func latoBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.latoBoldTtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "Raleway-Regular", withExtension: "ttf")`
-    static func ralewayRegularTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.ralewayRegularTtf
+    /// `bundle.url(forResource: "Lato-Light", withExtension: "ttf")`
+    static func latoLightTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.latoLightTtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "Raleway-Thin", withExtension: "ttf")`
-    static func ralewayThinTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.ralewayThinTtf
+    /// `bundle.url(forResource: "Lato-Regular", withExtension: "ttf")`
+    static func latoRegularTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.latoRegularTtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -206,32 +206,32 @@ struct R: Rswift.Validatable {
 
   /// This `R.font` struct is generated, and contains static references to 3 fonts.
   struct font: Rswift.Validatable {
-    /// Font `Raleway-Medium`.
-    static let ralewayMedium = Rswift.FontResource(fontName: "Raleway-Medium")
-    /// Font `Raleway-Regular`.
-    static let ralewayRegular = Rswift.FontResource(fontName: "Raleway-Regular")
-    /// Font `Raleway-Thin`.
-    static let ralewayThin = Rswift.FontResource(fontName: "Raleway-Thin")
+    /// Font `Lato-Bold`.
+    static let latoBold = Rswift.FontResource(fontName: "Lato-Bold")
+    /// Font `Lato-Light`.
+    static let latoLight = Rswift.FontResource(fontName: "Lato-Light")
+    /// Font `Lato-Regular`.
+    static let latoRegular = Rswift.FontResource(fontName: "Lato-Regular")
 
-    /// `UIFont(name: "Raleway-Medium", size: ...)`
-    static func ralewayMedium(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: ralewayMedium, size: size)
+    /// `UIFont(name: "Lato-Bold", size: ...)`
+    static func latoBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: latoBold, size: size)
     }
 
-    /// `UIFont(name: "Raleway-Regular", size: ...)`
-    static func ralewayRegular(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: ralewayRegular, size: size)
+    /// `UIFont(name: "Lato-Light", size: ...)`
+    static func latoLight(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: latoLight, size: size)
     }
 
-    /// `UIFont(name: "Raleway-Thin", size: ...)`
-    static func ralewayThin(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: ralewayThin, size: size)
+    /// `UIFont(name: "Lato-Regular", size: ...)`
+    static func latoRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: latoRegular, size: size)
     }
 
     static func validate() throws {
-      if R.font.ralewayMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Raleway-Medium' could not be loaded, is 'Raleway-Medium.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.ralewayRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Raleway-Regular' could not be loaded, is 'Raleway-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.ralewayThin(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Raleway-Thin' could not be loaded, is 'Raleway-Thin.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.latoBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Lato-Bold' could not be loaded, is 'Lato-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.latoLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Lato-Light' could not be loaded, is 'Lato-Light.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.latoRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Lato-Regular' could not be loaded, is 'Lato-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
     }
 
     fileprivate init() {}

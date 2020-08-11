@@ -51,7 +51,7 @@ class BuyTableViewCell: UITableViewCell {
         buyButton.backgroundColor = .systemBlue
         buyButton.setTitle(R.string.localizable.buy(), for: .normal)
         buyButton.setTitleColor(.white, for: .normal)
-        buyButton.titleLabel?.font = .ralewayMedium(16)
+        buyButton.titleLabel?.font = .latoRegular(16)
     }
 
 }

@@ -16,7 +16,7 @@ class NoDataAvailableTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         selectionStyle = .none
-        label.set(color: .black, font: .ralewayMedium(16))
+        label.set(color: .black, font: .latoRegular(16))
         label.set(numberOfLines: 2, adjustFont: true)
         label.textAlignment = .center
     }

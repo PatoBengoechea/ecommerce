@@ -39,7 +39,7 @@ class TextTableViewCell: UITableViewCell {
     // MARK: - Private Functions
     private func customize() {
         label.set(numberOfLines: 3, adjustFont: true)
-        label.set(color: .systemBlue, font: .ralewayMedium(14))
+        label.set(color: .systemBlue, font: .latoRegular(14))
     }
 
 }

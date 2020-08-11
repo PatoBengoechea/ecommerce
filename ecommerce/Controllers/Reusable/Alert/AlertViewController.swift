@@ -96,13 +96,13 @@ class AlertViewController: UIViewController {
         }
         
         titleLabel.text = titleText
-        titleLabel.font = .ralewayBold(24)
+        titleLabel.font = .latoBold(24)
         
-        bodyLabel.set(color: .systemBlue, font: .ralewayMedium(16))
+        bodyLabel.set(color: .systemBlue, font: .latoRegular(16))
         bodyLabel.adjustsFontSizeToFitWidth = true
         bodyLabel.text = message
         
-        acceptButton.titleLabel?.font = .ralewayMedium(16)
+        acceptButton.titleLabel?.font = .latoRegular(16)
         acceptButton.backgroundColor = .systemBlue
         acceptButton.setTitleColor(.white, for: .normal)
         acceptButton.setTitle(textButton, for: .normal)

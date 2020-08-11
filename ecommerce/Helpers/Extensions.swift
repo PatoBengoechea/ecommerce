@@ -24,16 +24,16 @@ public extension UINavigationController {
 
 // MARK: - UI Font
 extension UIFont {
-    class func ralewayMedium(_ size: Int) -> UIFont {
-        return UIFont(name: R.font.ralewayMedium.fontName, size: CGFloat(size)) ?? UIFont.systemFont(ofSize: CGFloat(size))
+    class func latoRegular(_ size: Int) -> UIFont {
+        return UIFont(name: R.font.latoRegular.fontName, size: CGFloat(size)) ?? UIFont.systemFont(ofSize: CGFloat(size))
     }
     
-    class func ralewayBold(_ size: Int) -> UIFont {
-        return UIFont(name: R.font.ralewayMedium.fontName, size: CGFloat(size)) ?? UIFont.systemFont(ofSize: CGFloat(size))
+    class func latoBold(_ size: Int) -> UIFont {
+        return UIFont(name: R.font.latoBold.fontName, size: CGFloat(size)) ?? UIFont.systemFont(ofSize: CGFloat(size))
     }
     
-    class func ralewayThin(_ size: Int) -> UIFont {
-        return UIFont(name: R.font.ralewayThin.fontName, size: CGFloat(size)) ?? UIFont.systemFont(ofSize: CGFloat(size))
+    class func latoLight(_ size: Int) -> UIFont {
+        return UIFont(name: R.font.latoLight.fontName, size: CGFloat(size)) ?? UIFont.systemFont(ofSize: CGFloat(size))
     }
     
 }
