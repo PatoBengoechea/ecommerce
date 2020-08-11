@@ -145,7 +145,6 @@
                     <connections>
                         <outlet property="productsTableView" destination="Lmr-lG-11y" id="cDB-Yk-Ytp"/>
                         <outlet property="searchBar" destination="eNr-1o-8Zn" id="qHX-GC-gM3"/>
-                        <outlet property="tableViewBottomConstraint" destination="f8H-hl-5Pa" id="vRn-s2-c6r"/>
                         <outlet property="topView" destination="DlB-z4-k0D" id="KaR-Zj-uxH"/>
                         <segue destination="r6O-b5-5vq" kind="show" identifier="goToProduct" id="wg3-hF-ppx"/>
                     </connections>
