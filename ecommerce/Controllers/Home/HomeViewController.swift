@@ -14,7 +14,6 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var productsTableView: UITableView!
-    @IBOutlet weak var tableViewBottomConstraint: NSLayoutConstraint!
     
     // MARK: - Properties
     var presenter = HomePresenter<HomeViewController>()
@@ -43,13 +42,11 @@ class HomeViewController: BaseViewController {
     }
     
     override func keyboardWillShow(_ keyboardHeight: CGFloat) {
-        tableViewBottomConstraint.constant += keyboardHeight
-        self.view.layoutIfNeeded()
+        
     }
     
     override func keyboardWillHide(_ keyboardHeight: CGFloat) {
-        tableViewBottomConstraint.constant = 0
-        self.view.layoutIfNeeded()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
