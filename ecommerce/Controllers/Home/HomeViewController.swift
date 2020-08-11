@@ -97,7 +97,8 @@ extension HomeViewController: HomePresenterDelegate {
         let alert = AlertViewController(alertType: .error,
                                         title: R.string.localizable.ups(),
                                         message: R.string.localizable.thereWasAnErrorPleaseTryAgain(),
-                                        textButton: R.string.localizable.retry())
+                                        textButton: R.string.localizable.retry(),
+                                        completion: presenter.searchProducts)
         alert.present()
     }
     
