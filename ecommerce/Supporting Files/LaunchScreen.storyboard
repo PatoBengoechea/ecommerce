@@ -21,10 +21,10 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shop" translatesAutoresizingMaskIntoConstraints="NO" id="bhc-j9-7OU">
-                                <rect key="frame" x="187" y="383" width="40" height="40"/>
+                                <rect key="frame" x="175" y="371" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bhc-j9-7OU" secondAttribute="height" multiplier="1:1" id="9Ai-Jp-iuX"/>
-                                    <constraint firstAttribute="height" constant="40" id="W88-Na-a4e"/>
+                                    <constraint firstAttribute="height" constant="64" id="W88-Na-a4e"/>
                                 </constraints>
                             </imageView>
                         </subviews>
