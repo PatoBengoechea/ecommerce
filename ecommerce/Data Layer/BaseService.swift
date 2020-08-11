@@ -47,7 +47,7 @@ class BaseResponse<T: Codable> {
             do {
                 status = true
                 data = try JSONDecoder().decode(BaseDataResponse.self, from: value)
-                message = ""
+                message = data?.message ?? ""
             } catch {
                 status = false
                 data = nil
