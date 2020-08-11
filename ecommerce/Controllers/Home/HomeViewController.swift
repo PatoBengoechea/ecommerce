@@ -39,7 +39,6 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        topView.roundCorners(radius: 7, corners: [.bottomLeft, .bottomRight])
         productsTableView.roundCorners(radius: 10)
     }
     
