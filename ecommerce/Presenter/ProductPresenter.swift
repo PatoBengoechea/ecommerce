@@ -16,6 +16,7 @@ class ProductPresenter<T: ProductPresenterDelegate>: BasePresenter<T> {
     
     enum DataSource {
         case image
+        case title
         case seller
         case buyButton
         case attributes
@@ -30,6 +31,7 @@ class ProductPresenter<T: ProductPresenterDelegate>: BasePresenter<T> {
     // MARK: - Functions
     func initDataSource() {
         if currentProduct?.thumbnail != nil { dataSource.append(.image)}
+        dataSource.append(.title)
         dataSource.append(.buyButton)
         dataSource.append(.price)
         dataSource.append(.seller)

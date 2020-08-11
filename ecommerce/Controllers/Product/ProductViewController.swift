@@ -89,6 +89,11 @@ extension ProductViewController: UITableViewDelegate, UITableViewDataSource {
                 return cell
             }
             
+        case .title:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.titleTableViewCell.identifier) as? TitleTableViewCell {
+                cell.setUp(text: presenter.currentProduct?.title ?? "")
+                return cell
+            }
         case .buyButton:
             if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.buyTableViewCell.identifier) as? BuyTableViewCell {
                 cell.setUp(delegate: self)
@@ -123,6 +128,9 @@ extension ProductViewController: UITableViewDelegate, UITableViewDataSource {
         switch presenter.dataSource[section] {
         case .image:
             return ImageTableViewCell.height
+            
+        case .title:
+            return 70
             
         case .buyButton:
             return BuyTableViewCell.height

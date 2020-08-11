@@ -39,7 +39,7 @@ class TitleTableViewCell: UITableViewCell {
         backgroundColor = .white
         
         label.set(color: .black, font: .ralewayBold(18))
-        label.set(numberOfLines: 1, adjustFont: true)
+        label.set(numberOfLines: 2, adjustFont: true)
         
     }
     
