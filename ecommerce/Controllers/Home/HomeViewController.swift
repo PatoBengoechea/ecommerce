@@ -94,6 +94,11 @@ extension HomeViewController: HomePresenterDelegate {
     
     func onError(message: String) {
         productsTableView.reloadData()
+        let alert = AlertViewController(alertType: .error,
+                                        title: R.string.localizable.ups(),
+                                        message: R.string.localizable.thereWasAnErrorPleaseTryAgain(),
+                                        textButton: R.string.localizable.retry())
+        alert.present()
     }
     
 }

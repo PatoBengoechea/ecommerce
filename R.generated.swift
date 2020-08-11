@@ -292,12 +292,22 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
+    /// Nib `AlertViewController`.
+    static let alertViewController = _R.nib._AlertViewController()
     /// Nib `LoaderTableViewCell`.
     static let loaderTableViewCell = _R.nib._LoaderTableViewCell()
     /// Nib `NoDataAvailableTableViewCell`.
     static let noDataAvailableTableViewCell = _R.nib._NoDataAvailableTableViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AlertViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.alertViewController) instead")
+    static func alertViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.alertViewController)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "LoaderTableViewCell", in: bundle)`
@@ -314,6 +324,10 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.noDataAvailableTableViewCell)
     }
     #endif
+
+    static func alertViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIControl? {
+      return R.nib.alertViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIControl
+    }
 
     static func loaderTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LoaderTableViewCell? {
       return R.nib.loaderTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LoaderTableViewCell
@@ -352,7 +366,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 10 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 15 localization keys.
     struct localizable {
       /// en translation: Attributes
       ///
@@ -362,6 +376,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es-419
       static let buy = Rswift.StringResource(key: "Buy", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: Ok
+      ///
+      /// Locales: en, es-419
+      static let ok = Rswift.StringResource(key: "Ok", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: Please, search the products you want to buy
       ///
       /// Locales: en, es-419
@@ -370,6 +388,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es-419
       static let price = Rswift.StringResource(key: "Price:", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: Retry
+      ///
+      /// Locales: en, es-419
+      static let retry = Rswift.StringResource(key: "Retry", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: Search products
       ///
       /// Locales: en, es-419
@@ -378,6 +400,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es-419
       static let seller = Rswift.StringResource(key: "Seller", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: Thank you
+      ///
+      /// Locales: en, es-419
+      static let thankYou = Rswift.StringResource(key: "Thank you", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: The price is not available
       ///
       /// Locales: en, es-419
@@ -390,10 +416,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, es-419
       static let thereWasAnErrorPleaseTryAgain = Rswift.StringResource(key: "There was an error, please try again", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: Ups
+      ///
+      /// Locales: en, es-419
+      static let ups = Rswift.StringResource(key: "Ups!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: We couldn't find products in that search
       ///
       /// Locales: en, es-419
       static let weCouldnTFindProductsInThatSearch = Rswift.StringResource(key: "We couldn't find products in that search", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: You bought
+      ///
+      /// Locales: en, es-419
+      static let youBought = Rswift.StringResource(key: "You bought", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
 
       /// en translation: Attributes
       ///
@@ -423,6 +457,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Buy", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Ok
+      ///
+      /// Locales: en, es-419
+      static func ok(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Ok", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Ok"
+        }
+
+        return NSLocalizedString("Ok", bundle: bundle, comment: "")
       }
 
       /// en translation: Please, search the products you want to buy
@@ -455,6 +504,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Price:", bundle: bundle, comment: "")
       }
 
+      /// en translation: Retry
+      ///
+      /// Locales: en, es-419
+      static func retry(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Retry", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Retry"
+        }
+
+        return NSLocalizedString("Retry", bundle: bundle, comment: "")
+      }
+
       /// en translation: Search products
       ///
       /// Locales: en, es-419
@@ -483,6 +547,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Seller", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Thank you
+      ///
+      /// Locales: en, es-419
+      static func thankYou(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Thank you", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Thank you"
+        }
+
+        return NSLocalizedString("Thank you", bundle: bundle, comment: "")
       }
 
       /// en translation: The price is not available
@@ -530,6 +609,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("There was an error, please try again", bundle: bundle, comment: "")
       }
 
+      /// en translation: Ups
+      ///
+      /// Locales: en, es-419
+      static func ups(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Ups!", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Ups!"
+        }
+
+        return NSLocalizedString("Ups!", bundle: bundle, comment: "")
+      }
+
       /// en translation: We couldn't find products in that search
       ///
       /// Locales: en, es-419
@@ -543,6 +637,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("We couldn't find products in that search", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You bought
+      ///
+      /// Locales: en, es-419
+      static func youBought(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("You bought", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "You bought"
+        }
+
+        return NSLocalizedString("You bought", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}
@@ -573,6 +682,17 @@ struct _R: Rswift.Validatable {
 
   #if os(iOS) || os(tvOS)
   struct nib {
+    struct _AlertViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "AlertViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIControl? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIControl
+      }
+
+      fileprivate init() {}
+    }
+
     struct _LoaderTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
       typealias ReusableType = LoaderTableViewCell
 

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum ServiceName: String {
     case getSearchProducts

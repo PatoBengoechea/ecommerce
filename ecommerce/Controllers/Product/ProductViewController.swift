@@ -56,14 +56,20 @@ extension ProductViewController: ProductPresenterDelegate {
     }
     
     func onError(message: String) {
-        
+        let alert = AlertViewController(alertType: .error,
+                                        title: R.string.localizable.ups(),
+                                        message: R.string.localizable.thereWasAnErrorPleaseTryAgain(),
+                                        textButton: R.string.localizable.retry())
+        alert.present()
     }
 }
 
 // MARK: - Buy Button Delegate
 extension ProductViewController: BuyDelegate {
     func buyButtonPressed() {
-        // ALERT
+        let message = "\(R.string.localizable.youBought()) \(presenter.currentProduct?.title ?? "")"
+        let alert = AlertViewController(alertType: .message, title: R.string.localizable.thankYou(), message: message, textButton: R.string.localizable.ok(), completion: nil)
+        alert.present()
     }
     
     

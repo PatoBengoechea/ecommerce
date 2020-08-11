@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		226D4BDAAEA7B650B2097812 /* Pods_ecommerce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87102FC3DD8DD371CDA5F00 /* Pods_ecommerce.framework */; };
+		6A071BBD24E347AA00513204 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A071BBB24E347AA00513204 /* AlertViewController.swift */; };
+		6A071BBE24E347AA00513204 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A071BBC24E347AA00513204 /* AlertViewController.xib */; };
 		6A29FCE924D103C1004BC260 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A29FCE824D103C1004BC260 /* AppDelegate.swift */; };
 		6A29FCEB24D103C1004BC260 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A29FCEA24D103C1004BC260 /* SceneDelegate.swift */; };
 		6A29FCF224D103C3004BC260 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A29FCF124D103C3004BC260 /* Assets.xcassets */; };
@@ -59,6 +61,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A071BBB24E347AA00513204 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		6A071BBC24E347AA00513204 /* AlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
 		6A29FCE524D103C1004BC260 /* ecommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ecommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A29FCE824D103C1004BC260 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A29FCEA24D103C1004BC260 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +131,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A071BBA24E3479E00513204 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				6A071BBB24E347AA00513204 /* AlertViewController.swift */,
+				6A071BBC24E347AA00513204 /* AlertViewController.xib */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		6A29FCDC24D103C1004BC260 = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +340,7 @@
 		6A4E10BC24DB4DAB007751D1 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				6A071BBA24E3479E00513204 /* Alert */,
 				6A4D55F524DE455D00154FF4 /* Loader */,
 				6A4E10BB24DB4D9D007751D1 /* No Data Cell */,
 			);
@@ -433,6 +447,7 @@
 				6A4E10BA24DB4D8F007751D1 /* NoDataAvailableTableViewCell.xib in Resources */,
 				6A4E10B324DB4654007751D1 /* Localizable.strings in Resources */,
 				6A4D560B24DF00A300154FF4 /* Raleway-Regular.ttf in Resources */,
+				6A071BBE24E347AA00513204 /* AlertViewController.xib in Resources */,
 				6A29FD0F24D10E98004BC260 /* Home.storyboard in Resources */,
 				6A4D560C24DF00A300154FF4 /* Raleway-Thin.ttf in Resources */,
 			);
@@ -508,6 +523,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A4D55FD24DE514100154FF4 /* TitleTableViewCell.swift in Sources */,
+				6A071BBD24E347AA00513204 /* AlertViewController.swift in Sources */,
 				6A4E10A724DB3164007751D1 /* SellerAddresViewModel.swift in Sources */,
 				6A4E10AB24DB3615007751D1 /* Constants.swift in Sources */,
 				6A4D560E24E0BA4A00154FF4 /* ImageTableViewCell.swift in Sources */,
