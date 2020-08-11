@@ -47,10 +47,10 @@ class ProductTableViewCell: UITableViewCell {
     
     // MARK: - Private Functions
     private func customize() {
-        titleLabel.set(color: .black, font: .latoRegular(16))
+        titleLabel.set(color: .ECBlack, font: .latoRegular(16))
         titleLabel.set(numberOfLines: 2, adjustFont: true)
         
-        priceLabel.set(color: .black, font: .latoBold(18))
+        priceLabel.set(color: .ECBlack, font: .latoBold(18))
         priceLabel.set(numberOfLines: 1, adjustFont: true)
         
         productImageView.contentMode = .scaleToFill

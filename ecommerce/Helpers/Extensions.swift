@@ -38,6 +38,12 @@ extension UIFont {
     
 }
 
+// MARK: - UIColor
+extension UIColor {
+    class var ECBlack: UIColor {
+        return UIColor(red: 31/255, green: 30/255, blue: 30/255, alpha: 1)
+    }
+}
 // MARK: - UI Label
 extension UILabel {
     func set(color: UIColor, font: UIFont) {
