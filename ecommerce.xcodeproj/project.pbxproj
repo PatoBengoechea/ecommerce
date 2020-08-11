@@ -151,10 +151,9 @@
 				6A4E109324DAF02E007751D1 /* Presenter */,
 				6A29FD0424D105E3004BC260 /* Controllers */,
 				6AA324FA24D8544F00CD2FB0 /* Data Layer */,
+				6A4D561724E21C7C00154FF4 /* Helpers */,
 				6A29FCFC24D10526004BC260 /* Supporting Files */,
 				6A29FCF624D103C3004BC260 /* Info.plist */,
-				6A29FD0C24D10E60004BC260 /* Extensions.swift */,
-				6A4E10AA24DB3615007751D1 /* Constants.swift */,
 			);
 			path = ecommerce;
 			sourceTree = "<group>";
@@ -243,6 +242,15 @@
 				6A4D561524E213EE00154FF4 /* BuyTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		6A4D561724E21C7C00154FF4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6A29FD0C24D10E60004BC260 /* Extensions.swift */,
+				6A4E10AA24DB3615007751D1 /* Constants.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		6A4E108924D8F56F007751D1 /* Model */ = {
