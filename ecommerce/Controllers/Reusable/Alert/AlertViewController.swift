@@ -90,7 +90,7 @@ class AlertViewController: UIViewController {
         case .error:
             titleLabel.textColor = .systemRed
         case .message:
-            titleLabel.textColor = .systemBlue
+            titleLabel.textColor = .ECBlack
         default:
             break
         }
@@ -98,7 +98,7 @@ class AlertViewController: UIViewController {
         titleLabel.text = titleText
         titleLabel.font = .latoBold(24)
         
-        bodyLabel.set(color: .systemBlue, font: .latoRegular(16))
+        bodyLabel.set(color: .ECBlack, font: .latoRegular(16))
         bodyLabel.adjustsFontSizeToFitWidth = true
         bodyLabel.text = message
         
