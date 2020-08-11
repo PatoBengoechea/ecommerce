@@ -127,6 +127,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             switch presenter.searchProductsStatus {
             case .loading:
                 if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.loaderTableViewCell.identifier, for: indexPath) as? LoaderTableViewCell {
+                    cell.setUp()
                     return cell
                 }
                 

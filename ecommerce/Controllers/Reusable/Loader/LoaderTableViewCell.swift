@@ -26,6 +26,10 @@ class LoaderTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setUp() {
+        activityIndicator.startAnimating()
+    }
+    
     // MARK: - Private Functions
     private func customize() {
         activityIndicator.startAnimating()
