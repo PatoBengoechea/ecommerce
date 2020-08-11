@@ -16,6 +16,6 @@ class Product: Codable {
     let accepts_mercadopago: Bool?
     let attributes: [Attribute]?
     let seller: Seller?
-    let sellerAddres: SellerAddres?
+    let seller_address: SellerAddres?
     
 }

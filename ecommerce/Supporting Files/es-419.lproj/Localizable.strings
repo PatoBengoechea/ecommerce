@@ -11,3 +11,8 @@
 "Please, search the products you want to buy" = "Por favor, busca los productos que quieres comprar";
 "There was an error, please try again" = "Tuvimos un error, por favor intenta de nuevo";
 "Attributes"="Características";
+"Seller"="Vendedor";
+"Price:"="Precio:";
+"The price is not available"="El precio no esta disponible";
+"The seller information is not available"="La informacion del vendedor no esta disponible";
+"Buy"="Comprar";

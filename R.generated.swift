@@ -326,16 +326,24 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 5 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 9 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `AttributeTableViewCell`.
     static let attributeTableViewCell: Rswift.ReuseIdentifier<AttributeTableViewCell> = Rswift.ReuseIdentifier(identifier: "AttributeTableViewCell")
+    /// Reuse identifier `BuyTableViewCell`.
+    static let buyTableViewCell: Rswift.ReuseIdentifier<BuyTableViewCell> = Rswift.ReuseIdentifier(identifier: "BuyTableViewCell")
+    /// Reuse identifier `ImageTableViewCell`.
+    static let imageTableViewCell: Rswift.ReuseIdentifier<ImageTableViewCell> = Rswift.ReuseIdentifier(identifier: "ImageTableViewCell")
     /// Reuse identifier `LoaderTableViewCell`.
     static let loaderTableViewCell: Rswift.ReuseIdentifier<LoaderTableViewCell> = Rswift.ReuseIdentifier(identifier: "LoaderTableViewCell")
     /// Reuse identifier `NoDataAvailableTableViewCell`.
     static let noDataAvailableTableViewCell: Rswift.ReuseIdentifier<NoDataAvailableTableViewCell> = Rswift.ReuseIdentifier(identifier: "NoDataAvailableTableViewCell")
+    /// Reuse identifier `PriceTableViewCell`.
+    static let priceTableViewCell: Rswift.ReuseIdentifier<PriceTableViewCell> = Rswift.ReuseIdentifier(identifier: "PriceTableViewCell")
     /// Reuse identifier `ProductTableViewCell`.
     static let productTableViewCell: Rswift.ReuseIdentifier<ProductTableViewCell> = Rswift.ReuseIdentifier(identifier: "ProductTableViewCell")
+    /// Reuse identifier `TextTableViewCell`.
+    static let textTableViewCell: Rswift.ReuseIdentifier<TextTableViewCell> = Rswift.ReuseIdentifier(identifier: "TextTableViewCell")
     /// Reuse identifier `TitleTableViewCell`.
     static let titleTableViewCell: Rswift.ReuseIdentifier<TitleTableViewCell> = Rswift.ReuseIdentifier(identifier: "TitleTableViewCell")
 
@@ -344,20 +352,40 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 5 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 10 localization keys.
     struct localizable {
       /// en translation: Attributes
       ///
       /// Locales: en, es-419
       static let attributes = Rswift.StringResource(key: "Attributes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: Buy
+      ///
+      /// Locales: en, es-419
+      static let buy = Rswift.StringResource(key: "Buy", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: Please, search the products you want to buy
       ///
       /// Locales: en, es-419
       static let pleaseSearchTheProductsYouWantToBuy = Rswift.StringResource(key: "Please, search the products you want to buy", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: Price:
+      ///
+      /// Locales: en, es-419
+      static let price = Rswift.StringResource(key: "Price:", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: Search products
       ///
       /// Locales: en, es-419
       static let searchProducts = Rswift.StringResource(key: "Search products", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: Seller
+      ///
+      /// Locales: en, es-419
+      static let seller = Rswift.StringResource(key: "Seller", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: The price is not available
+      ///
+      /// Locales: en, es-419
+      static let thePriceIsNotAvailable = Rswift.StringResource(key: "The price is not available", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
+      /// en translation: The seller information is not available
+      ///
+      /// Locales: en, es-419
+      static let theSellerInformationIsNotAvailable = Rswift.StringResource(key: "The seller information is not available", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es-419"], comment: nil)
       /// en translation: There was an unexpected error, please try again
       ///
       /// Locales: en, es-419
@@ -382,6 +410,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Attributes", bundle: bundle, comment: "")
       }
 
+      /// en translation: Buy
+      ///
+      /// Locales: en, es-419
+      static func buy(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Buy", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Buy"
+        }
+
+        return NSLocalizedString("Buy", bundle: bundle, comment: "")
+      }
+
       /// en translation: Please, search the products you want to buy
       ///
       /// Locales: en, es-419
@@ -397,6 +440,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Please, search the products you want to buy", bundle: bundle, comment: "")
       }
 
+      /// en translation: Price:
+      ///
+      /// Locales: en, es-419
+      static func price(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Price:", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Price:"
+        }
+
+        return NSLocalizedString("Price:", bundle: bundle, comment: "")
+      }
+
       /// en translation: Search products
       ///
       /// Locales: en, es-419
@@ -410,6 +468,51 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Search products", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Seller
+      ///
+      /// Locales: en, es-419
+      static func seller(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Seller", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Seller"
+        }
+
+        return NSLocalizedString("Seller", bundle: bundle, comment: "")
+      }
+
+      /// en translation: The price is not available
+      ///
+      /// Locales: en, es-419
+      static func thePriceIsNotAvailable(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("The price is not available", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "The price is not available"
+        }
+
+        return NSLocalizedString("The price is not available", bundle: bundle, comment: "")
+      }
+
+      /// en translation: The seller information is not available
+      ///
+      /// Locales: en, es-419
+      static func theSellerInformationIsNotAvailable(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("The seller information is not available", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "The seller information is not available"
+        }
+
+        return NSLocalizedString("The seller information is not available", bundle: bundle, comment: "")
       }
 
       /// en translation: There was an unexpected error, please try again

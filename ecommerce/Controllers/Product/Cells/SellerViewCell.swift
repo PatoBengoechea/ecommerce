@@ -1,21 +1,18 @@
 //
-//  TitleTableViewCell.swift
+//  TextTableViewCell.swift
 //  ecommerce
 //
-//  Created by Patricio Bengoechea on 08/08/2020.
+//  Created by Patricio Bengoechea on 09/08/2020.
 //  Copyright © 2020 Patricio Bengoechea. All rights reserved.
 //
 
 import UIKit
 
-class TitleTableViewCell: UITableViewCell {
+class TextTableViewCell: UITableViewCell {
     
     // MARK: - @IBOutlet
-    @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var label: UILabel!
-    
-    // MARK: - Properties
-    
+
     // MARK: - Override Functions
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,18 +27,19 @@ class TitleTableViewCell: UITableViewCell {
     }
     
     // MARK: - Functions
-    func setUp(text: String) {
-        label.text = text
+    func setUp(seller: SellerViewModel?, sellerAddres: SellerAddresViewModel?) {
+        if seller == nil, sellerAddres == nil {
+            label.text = R.string.localizable.theSellerInformationIsNotAvailable()
+        } else {
+            label.text = "\(seller?.nickName ?? "")  \(sellerAddres?.fullAddres ?? "")"
+        }
+        
     }
     
     // MARK: - Private Functions
     private func customize() {
-        backgroundColor = .white
-        
-        label.set(color: .black, font: .ralewayBold(18))
-        label.set(numberOfLines: 1, adjustFont: true)
-        
+        label.set(numberOfLines: 3, adjustFont: true)
+        label.set(color: .systemBlue, font: .ralewayMedium(14))
     }
-    
 
 }

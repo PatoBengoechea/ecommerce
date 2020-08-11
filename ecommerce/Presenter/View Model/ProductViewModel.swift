@@ -28,7 +28,7 @@ struct ProductViewModel: BaseViewModel {
         thumbnail = object.thumbnail ?? ""
         attributes = AttributeViewModel.array(object.attributes ?? [])
         seller = SellerViewModel(optional: object.seller) 
-        sellerAddres = SellerAddresViewModel(optional: object.sellerAddres)
+        sellerAddres = SellerAddresViewModel(optional: object.seller_address)
         acceptMercadoPago = object.accepts_mercadopago ?? false
     }
 }

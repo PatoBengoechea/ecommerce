@@ -31,6 +31,11 @@
 		6A4D560A24DF00A300154FF4 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A4D560724DF00A200154FF4 /* Raleway-Medium.ttf */; };
 		6A4D560B24DF00A300154FF4 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A4D560824DF00A200154FF4 /* Raleway-Regular.ttf */; };
 		6A4D560C24DF00A300154FF4 /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A4D560924DF00A200154FF4 /* Raleway-Thin.ttf */; };
+		6A4D560E24E0BA4A00154FF4 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4D560D24E0BA4A00154FF4 /* ImageTableViewCell.swift */; };
+		6A4D561024E0BD2700154FF4 /* SellerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4D560F24E0BD2700154FF4 /* SellerViewCell.swift */; };
+		6A4D561224E2067F00154FF4 /* EshopSeller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4D561124E2067F00154FF4 /* EshopSeller.swift */; };
+		6A4D561424E20B1500154FF4 /* PriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4D561324E20B1500154FF4 /* PriceTableViewCell.swift */; };
+		6A4D561624E213EE00154FF4 /* BuyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4D561524E213EE00154FF4 /* BuyTableViewCell.swift */; };
 		6A4E108424D8EC85007751D1 /* PathBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E108324D8EC85007751D1 /* PathBuilder.swift */; };
 		6A4E108824D8F003007751D1 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E108724D8F003007751D1 /* Product.swift */; };
 		6A4E108B24D8F57A007751D1 /* Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E108A24D8F57A007751D1 /* Paging.swift */; };
@@ -79,6 +84,11 @@
 		6A4D560724DF00A200154FF4 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
 		6A4D560824DF00A200154FF4 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
 		6A4D560924DF00A200154FF4 /* Raleway-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Thin.ttf"; sourceTree = "<group>"; };
+		6A4D560D24E0BA4A00154FF4 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		6A4D560F24E0BD2700154FF4 /* SellerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerViewCell.swift; sourceTree = "<group>"; };
+		6A4D561124E2067F00154FF4 /* EshopSeller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EshopSeller.swift; sourceTree = "<group>"; };
+		6A4D561324E20B1500154FF4 /* PriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTableViewCell.swift; sourceTree = "<group>"; };
+		6A4D561524E213EE00154FF4 /* BuyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTableViewCell.swift; sourceTree = "<group>"; };
 		6A4E108324D8EC85007751D1 /* PathBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathBuilder.swift; sourceTree = "<group>"; };
 		6A4E108724D8F003007751D1 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		6A4E108A24D8F57A007751D1 /* Paging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paging.swift; sourceTree = "<group>"; };
@@ -226,7 +236,11 @@
 			isa = PBXGroup;
 			children = (
 				6A4D55FC24DE514100154FF4 /* TitleTableViewCell.swift */,
+				6A4D560F24E0BD2700154FF4 /* SellerViewCell.swift */,
 				6A4D55FF24DE517500154FF4 /* AttributeTableViewCell.swift */,
+				6A4D560D24E0BA4A00154FF4 /* ImageTableViewCell.swift */,
+				6A4D561324E20B1500154FF4 /* PriceTableViewCell.swift */,
+				6A4D561524E213EE00154FF4 /* BuyTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -239,6 +253,7 @@
 				6A4E108C24D8F5B3007751D1 /* Seller.swift */,
 				6A4E108E24D8F693007751D1 /* SellerAddres.swift */,
 				6A4D560524DE5C1200154FF4 /* Attribute.swift */,
+				6A4D561124E2067F00154FF4 /* EshopSeller.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -487,6 +502,7 @@
 				6A4D55FD24DE514100154FF4 /* TitleTableViewCell.swift in Sources */,
 				6A4E10A724DB3164007751D1 /* SellerAddresViewModel.swift in Sources */,
 				6A4E10AB24DB3615007751D1 /* Constants.swift in Sources */,
+				6A4D560E24E0BA4A00154FF4 /* ImageTableViewCell.swift in Sources */,
 				6A4E10A524DB3082007751D1 /* SellerViewModel.swift in Sources */,
 				6A4E108424D8EC85007751D1 /* PathBuilder.swift in Sources */,
 				6A4E109524DAF039007751D1 /* BasePresenter.swift in Sources */,
@@ -502,6 +518,7 @@
 				6A4D55F324DE455600154FF4 /* LoaderTableViewCell.swift in Sources */,
 				6A29FD0924D109E8004BC260 /* R.generated.swift in Sources */,
 				6AA324F924D8544700CD2FB0 /* BaseService.swift in Sources */,
+				6A4D561624E213EE00154FF4 /* BuyTableViewCell.swift in Sources */,
 				6A4E108824D8F003007751D1 /* Product.swift in Sources */,
 				6A4E109124DA19CE007751D1 /* ProductRequest.swift in Sources */,
 				6A4D560424DE5B7300154FF4 /* AttributeViewModel.swift in Sources */,
@@ -512,8 +529,11 @@
 				6A4E108B24D8F57A007751D1 /* Paging.swift in Sources */,
 				6A4E10A224DB2DA9007751D1 /* ProductViewModel.swift in Sources */,
 				6A29FD0B24D10DE9004BC260 /* HomeViewController.swift in Sources */,
+				6A4D561424E20B1500154FF4 /* PriceTableViewCell.swift in Sources */,
 				6A4D55F724DE4D9300154FF4 /* ProductViewController.swift in Sources */,
+				6A4D561024E0BD2700154FF4 /* SellerViewCell.swift in Sources */,
 				6A29FD0D24D10E60004BC260 /* Extensions.swift in Sources */,
+				6A4D561224E2067F00154FF4 /* EshopSeller.swift in Sources */,
 				6A4D560624DE5C1200154FF4 /* Attribute.swift in Sources */,
 				6A4E109724DAF0A5007751D1 /* HomePresenter.swift in Sources */,
 			);

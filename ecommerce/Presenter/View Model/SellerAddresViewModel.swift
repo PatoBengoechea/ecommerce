@@ -15,11 +15,13 @@ struct SellerAddresViewModel: BaseViewModel {
     let country: String
     let state: String
     let city: String
+    var fullAddres: String
     
     init(object: SellerAddres) {
         id = object.id ?? ""
         country = object.country?.name ?? ""
         state = object.state?.name ?? ""
         city = object.city?.name ?? ""
+        fullAddres = "\(city), \(state), \(country)"
     }
 }

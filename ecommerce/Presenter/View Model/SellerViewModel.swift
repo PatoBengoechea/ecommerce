@@ -13,18 +13,13 @@ struct SellerViewModel: BaseViewModel {
     typealias T = Seller
     
     let id: String
-    let powerSellerStatus: String
+    let nickName: String
     let carDealer: Bool
     
     init(object: Seller) {
         id = object.id?.description ?? ""
-        powerSellerStatus = object.powerSellerStatus ?? ""
+        nickName = object.eshop?.nick_name ?? ""
         carDealer = object.carDealer ?? false
     }
     
-    init() {
-        id = ""
-        powerSellerStatus = ""
-        carDealer = false
-    }
 }

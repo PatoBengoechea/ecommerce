@@ -15,8 +15,11 @@ protocol ProductPresenterDelegate: BasePresenterDelegate {
 class ProductPresenter<T: ProductPresenterDelegate>: BasePresenter<T> {
     
     enum DataSource {
+        case image
         case seller
+        case buyButton
         case attributes
+        case price
         
     }
     
@@ -25,12 +28,11 @@ class ProductPresenter<T: ProductPresenterDelegate>: BasePresenter<T> {
     var currentProduct: ProductViewModel? { didSet { initDataSource()}}
     
     // MARK: - Functions
-    func set(currentProduct: ProductViewModel?) {
-        guard let product = currentProduct else { return }
-    }
-    
     func initDataSource() {
-//        if currentProduct?.seller != nil { dataSource.append(.seller)}
+        if currentProduct?.thumbnail != nil { dataSource.append(.image)}
+        dataSource.append(.buyButton)
+        dataSource.append(.price)
+        dataSource.append(.seller)
         if !(currentProduct?.attributes.isEmpty ?? false) { dataSource.append(.attributes)}
     }
     

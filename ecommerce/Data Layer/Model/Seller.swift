@@ -10,6 +10,6 @@ import Foundation
 
 class Seller: Codable {
     let id: Int?
-    let powerSellerStatus: String?
+    let eshop: EshopSeller?
     let carDealer: Bool?
 }
