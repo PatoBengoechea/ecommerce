@@ -27,9 +27,7 @@ class SplashViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-            self.rootDelegate?.goToHome()
-        }
+        PushManager.instance.registerForRemoteNotifications(self)
         
     }
     
@@ -41,5 +39,27 @@ class SplashViewController: UIViewController {
         
         loader.startAnimating()
     }
+    
+    private func continueFlow() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+            self.rootDelegate?.goToHome()
+        }
+    }
 
+}
+
+extension SplashViewController: PushManagerDelegate {
+    func didRegister() {
+        continueFlow()
+    }
+    
+    func didRegisterForRemoteNotifications(withDeviceToken: Data) {
+        continueFlow()
+    }
+    
+    func didFailToRegisterForRemoteNotifications(withError error: Error) {
+        continueFlow()
+    }
+    
+    
 }

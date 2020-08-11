@@ -19,3 +19,26 @@ enum ServiceStatus {
     case error
     case notExecuted
 }
+
+enum DefaultKey {
+    case deviceToken
+    case firebaseToken
+    var rawValue: String {
+        switch self {
+        case .deviceToken: return "device_token"
+        case .firebaseToken: return "firebase_token"
+        
+        }
+    }
+}
+
+enum FirebaseNotificationChannel {
+    case iOS
+    case general
+    var rawValue: String {
+        switch self {
+        case .iOS: return "ios"
+        case .general: return "general"
+        }
+    }
+}
