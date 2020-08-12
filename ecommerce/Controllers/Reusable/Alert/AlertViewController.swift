@@ -96,7 +96,7 @@ class AlertViewController: UIViewController {
         }
         
         titleLabel.text = titleText
-        titleLabel.font = .latoBold(24)
+        titleLabel.font = .latoLight(24)
         
         bodyLabel.set(color: .ECBlack, font: .latoRegular(16))
         bodyLabel.adjustsFontSizeToFitWidth = true

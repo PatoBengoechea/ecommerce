@@ -38,7 +38,7 @@ class TitleTableViewCell: UITableViewCell {
     private func customize() {
         backgroundColor = .white
         
-        label.set(color: .ECBlack, font: .latoBold(18))
+        label.set(color: .ECBlack, font: .latoLight(22))
         label.set(numberOfLines: 2, adjustFont: true)
         
     }
