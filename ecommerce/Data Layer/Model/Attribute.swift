@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Attribute: NSObject,Codable {
+class Attribute: NSObject, Codable {
     let name: String?
     let value_name: String?
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Seller: Codable {
+class Seller: NSObject, Codable {
     let id: Int?
     let eshop: EshopSeller?
     let carDealer: Bool?

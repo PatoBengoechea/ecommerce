@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Product: Codable {
+class Product: NSObject, Codable {
     let id: String?
     let title: String?
     let price: Float?

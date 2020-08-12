@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Paging: Codable {
+class Paging: NSObject, Codable {
     let total: Int?
     let offset: Int?
     let limit: Int?
